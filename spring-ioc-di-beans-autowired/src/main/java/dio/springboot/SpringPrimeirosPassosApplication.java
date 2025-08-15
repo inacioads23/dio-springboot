@@ -1,6 +1,5 @@
 package dio.springboot;
 
-import com.google.gson.Gson;
 import dio.springboot.app.ConversorJson;
 import dio.springboot.app.ViaCepResponse;
 import org.springframework.boot.CommandLineRunner;

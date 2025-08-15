@@ -1,14 +1,19 @@
 package dio.springboot.app;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SistemaMensagem {
-    @Autowired
+    
+	//@Autowired
     private Remetente noreply;
-    @Autowired
+    //@Autowired
     private Remetente techTeam;
+    
+    public SistemaMensagem(Remetente noreply, Remetente techTeam) {
+    	this.noreply = noreply;
+    	this.techTeam = techTeam;
+    }
    public void enviarConfirmacaoCadastro(){
        System.out.println(noreply);
        System.out.println("Seu cadastro foi aprovado");

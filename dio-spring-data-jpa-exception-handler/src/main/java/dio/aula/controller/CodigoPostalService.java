@@ -2,7 +2,6 @@ package dio.aula.controller;
 
 import dio.aula.handler.BusinessException;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @Service
 public class CodigoPostalService {

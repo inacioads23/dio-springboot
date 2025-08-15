@@ -48,8 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
     @Bean //HABILITANDO ACESSAR O H2-DATABSE NA WEB
-    public ServletRegistrationBean h2servletRegistration(){
-        ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
+    public ServletRegistrationBean<WebServlet> h2servletRegistration(){
+        ServletRegistrationBean<WebServlet> registrationBean = new ServletRegistrationBean<WebServlet>( new WebServlet());
         registrationBean.addUrlMappings("/h2-console/*");
         return registrationBean;
     }
