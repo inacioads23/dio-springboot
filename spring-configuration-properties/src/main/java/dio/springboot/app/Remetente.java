@@ -6,7 +6,7 @@ import java.util.List;
 
 @Configuration
 @ConfigurationProperties(prefix = "remetente")
-public class Rementente {
+public class Remetente {
     private String nome;
     private String email;
     private List<Long> telefones;

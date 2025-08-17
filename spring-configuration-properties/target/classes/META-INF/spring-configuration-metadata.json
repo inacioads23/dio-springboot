@@ -2,25 +2,25 @@
   "groups": [
     {
       "name": "remetente",
-      "type": "dio.springboot.app.Rementente",
-      "sourceType": "dio.springboot.app.Rementente"
+      "type": "dio.springboot.app.Remetente",
+      "sourceType": "dio.springboot.app.Remetente"
     }
   ],
   "properties": [
     {
       "name": "remetente.email",
       "type": "java.lang.String",
-      "sourceType": "dio.springboot.app.Rementente"
+      "sourceType": "dio.springboot.app.Remetente"
     },
     {
       "name": "remetente.nome",
       "type": "java.lang.String",
-      "sourceType": "dio.springboot.app.Rementente"
+      "sourceType": "dio.springboot.app.Remetente"
     },
     {
       "name": "remetente.telefones",
       "type": "java.util.List<java.lang.Long>",
-      "sourceType": "dio.springboot.app.Rementente"
+      "sourceType": "dio.springboot.app.Remetente"
     }
   ],
   "hints": [],
