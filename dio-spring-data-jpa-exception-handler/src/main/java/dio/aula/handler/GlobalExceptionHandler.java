@@ -13,22 +13,27 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import jakarta.annotation.Resource;
+
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
-    @Resource
-    private MessageSource messageSource;
+    
+	@Resource
+    private MessageSource messageSource; // pega mensagem das origens das excessões
+    
     private HttpHeaders headers(){
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
     }
-    private ResponseError responseError(String message,HttpStatus statusCode){
+    
+    private ResponseError responseError(String message, HttpStatus statusCode){
         ResponseError responseError = new ResponseError();
         responseError.setStatus("error");
         responseError.setError(message);
         responseError.setStatusCode(statusCode.value());
         return responseError;
     }
+    
     @ExceptionHandler(Exception.class)
     private ResponseEntity<Object> handleGeneral(Exception e, WebRequest request) {
         if (e.getClass().isAssignableFrom(UndeclaredThrowableException.class)) {
@@ -40,6 +45,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             return handleExceptionInternal(e, error, headers(), HttpStatus.INTERNAL_SERVER_ERROR, request);
         }
     }
+    
     @ExceptionHandler({BusinessException.class})
     private ResponseEntity<Object> handleBusinessException(BusinessException e, WebRequest request) {
         ResponseError error = responseError(e.getMessage(),HttpStatus.CONFLICT);

@@ -3,7 +3,7 @@ package dio.aula.handler;
 import java.util.Date;
 
 public class ResponseError {
-    private Date timestamp = new Date();
+    private Date timestamp = new Date(); // momento que acontece o erro
     private String status = "error";
     private int statusCode = 400;
     private String error;
