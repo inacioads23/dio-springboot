@@ -58,6 +58,16 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version><!--$NO-MVN-MAN-VER$ -->
 			</plugin>
+			
+			<!-- Adicionado para compatibilidade com java 21 -->
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.11.0</version> <!--$NO-MVN-MAN-VER$ --> <!-- versão que suporta o flag release -->
+            <configuration>
+                <release>8</release> <!-- Garante que só APIs do Java 8 serão permitidas -->
+            </configuration>
+        </plugin>
 		</plugins>
 		
 	</build>
