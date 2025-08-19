@@ -32,12 +32,14 @@ public class JWTFilter extends OncePerRequestFilter {
 
                 List<SimpleGrantedAuthority> authorities = authorities(tokenObject.getRoles());
 
+                // gera um authentication via token
                 UsernamePasswordAuthenticationToken userToken =
                         new UsernamePasswordAuthenticationToken(
                                 tokenObject.getSubject(),
                                 null,
                                 authorities);
 
+                // adiciona no contexto
                 SecurityContextHolder.getContext().setAuthentication(userToken);
 
             }else {
@@ -50,6 +52,7 @@ public class JWTFilter extends OncePerRequestFilter {
             return;
         }
     }
+    
     private List<SimpleGrantedAuthority> authorities(List<String> roles){
         return roles.stream().map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());

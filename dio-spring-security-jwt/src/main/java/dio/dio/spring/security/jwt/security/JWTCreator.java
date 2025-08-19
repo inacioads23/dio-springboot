@@ -22,7 +22,7 @@ public class JWTCreator {
         return prefix + " " + token;
     }
     
-    public static JWTObject create(String token, String prefix,String key)
+    public static JWTObject create(String token, String prefix, String key)
             throws ExpiredJwtException, UnsupportedJwtException, MalformedJwtException, SignatureException {
         JWTObject object = new JWTObject();
         token = token.replace(prefix, "");
