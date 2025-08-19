@@ -67,7 +67,7 @@
             <configuration>
                 <release>8</release> <!-- Garante que só APIs do Java 8 serão permitidas -->
             </configuration>
-        </plugin>
+        	</plugin>
 		</plugins>
 		
 	</build>
