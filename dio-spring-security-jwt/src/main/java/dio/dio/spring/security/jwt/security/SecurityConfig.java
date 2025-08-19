@@ -6,9 +6,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(prefix = "security.config")
 public class SecurityConfig {
-    public static String PREFIX;
-    public static String KEY;
-    public static Long EXPIRATION;
+    // lerá do application.properties	
+	public static String PREFIX; // prefixo do token
+    public static String KEY; // chave privada
+    public static Long EXPIRATION; // tempo de expiração do token
 
     public void setPrefix(String prefix){
         PREFIX = prefix;
