@@ -17,9 +17,8 @@ public class UserService {
     }
     
     public void createUser(User user){
-        String pass = user.getPassword();
-        //criptografando antes de salvar no banco
-        user.setPassword(encoder.encode(pass));
-        repository.save(user);
+        String pass = user.getPassword(); // recebe a senha        
+        user.setPassword(encoder.encode(pass)); // criptografa antes de salvar no banco
+        repository.save(user); // salva
     }
 }
