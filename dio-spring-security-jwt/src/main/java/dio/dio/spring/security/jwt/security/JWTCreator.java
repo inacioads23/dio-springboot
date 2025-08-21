@@ -25,7 +25,12 @@ public class JWTCreator {
     public static JWTObject create(String token, String prefix, String key)
             throws ExpiredJwtException, UnsupportedJwtException, MalformedJwtException, SignatureException {
         JWTObject object = new JWTObject();
-        token = token.replace(prefix, "");
+        //token = token.replace(prefix, "");
+        if (token != null && token.startsWith(prefix)) {
+            token = token.replace(prefix, "").trim();
+        } else {
+            throw new MalformedJwtException("Token JWT inválido ou prefixo ausente.");
+        }
         Claims claims = Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
         object.setSubject(claims.getSubject());
         object.setExpiration(claims.getExpiration());
