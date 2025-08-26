@@ -23,8 +23,8 @@ public class LoginController {
     private UserRepository repository;
 
     @PostMapping("/login")
-    public Sessao logar(@RequestBody Login login){
-        User user = repository.findByUsername(login.getUsername());
+    public Sessao logar(@RequestBody Login login){         
+    	User user = repository.findByUsername(login.getUsername());
         if(user!=null) {
             boolean passwordOk =  encoder.matches(login.getPassword(), user.getPassword());
             if (!passwordOk) {
