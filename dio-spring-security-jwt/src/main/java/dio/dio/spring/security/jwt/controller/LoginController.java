@@ -20,7 +20,7 @@ public class LoginController {
     @Autowired
     private SecurityConfig securityConfig;
     @Autowired
-    private UserRepository repository;
+    private UserRepository repository;	
 
     @PostMapping("/login")
     public Sessao logar(@RequestBody Login login){         
